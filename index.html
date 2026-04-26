@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASALTO | Fine Seafood Dining | Funchal, Madeira</title>
+    <meta name="description" content="Experience the finest seafood above the Atlantic. Panoramic views at Praia da Barreirinha, Funchal.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBFB;
+            --ocean: #0D2B45;
+            --aqua: #7FB3B8;
+            --gold: #C8A96E;
+            --text: #1A1A1A;
+            --text-light: #555555;
+            --white: #FFFFFF;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+
+        /* Navbar - Premium Look */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(13, 43, 69, 0.05);
+        }
+
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { 
+            font-size: 1.6rem; 
+            font-weight: 700; 
+            letter-spacing: 5px; 
+            color: var(--ocean); 
+            text-decoration: none; 
+            text-transform: uppercase;
+        }
+
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text); 
+            font-size: 0.8rem; 
+            font-weight: 400; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--aqua); }
+
+        /* Hero - Dramatic Sea Background */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(rgba(13, 43, 69, 0.4), rgba(13, 43, 69, 0.1)), url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
+            text-align: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content { max-width: 900px; }
+        .hero h1 { 
+            font-size: clamp(4rem, 15vw, 10rem); 
+            line-height: 0.9; 
+            margin-bottom: 25px; 
+            color: var(--white); 
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero p { 
+            font-size: clamp(1rem, 3vw, 1.2rem); 
+            letter-spacing: 6px; 
+            text-transform: uppercase; 
+            margin-bottom: 50px; 
+            color: var(--white);
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 22px 55px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: var(--transition);
+            border-radius: 50px;
+        }
+
+        .btn-ocean { background-color: var(--ocean); color: var(--white); box-shadow: 0 10px 30px rgba(13, 43, 69, 0.2); }
+        .btn-ocean:hover { background-color: var(--aqua); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(127, 179, 184, 0.3); }
+
+        .btn-outline { border: 1px solid var(--white); color: var(--white); margin-left: 15px; }
+        .btn-outline:hover { background: var(--white); color: var(--ocean); }
+
+        /* Sections */
+        .section { padding: 140px 0; }
+        .section-subtitle { 
+            color: var(--aqua); 
+            letter-spacing: 5px; 
+            text-transform: uppercase; 
+            font-size: 0.75rem; 
+            font-weight: 600;
+            display: block; 
+            margin-bottom: 15px; 
+            text-align: center; 
+        }
+        .section-title { font-size: clamp(3rem, 7vw, 5rem); text-align: center; margin-bottom: 80px; color: var(--ocean); line-height: 1.1; }
+
+        /* About Grid */
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 100px; align-items: center; }
+        .about-text h2 { font-size: 3.5rem; margin-bottom: 35px; color: var(--ocean); line-height: 1.1; }
+        .about-text p { font-size: 1.15rem; color: var(--text-light); margin-bottom: 30px; font-weight: 300; }
+        
+        .about-image { position: relative; overflow: hidden; border-radius: 4px; }
+        .about-image img { width: 100%; transition: transform 2s ease; display: block; }
+        .about-image:hover img { transform: scale(1.05); }
+        .about-image::after {
+            content: ''; position: absolute; top: 20px; left: 20px; width: 100%; height: 100%;
+            border: 1px solid var(--aqua); z-index: -1; pointer-events: none;
+        }
+
+        /* Menu Section */
+        .menu-container { background-color: #f8fafa; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; }
+        .menu-card { 
+            background: var(--white); 
+            padding: 50px; 
+            border: 1px solid rgba(127, 179, 184, 0.1); 
+            transition: var(--transition); 
+            box-shadow: 0 5px 25px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+        .menu-card:hover { border-color: var(--aqua); transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
+        .menu-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--aqua); transform: scaleY(0); transition: var(--transition);
+        }
+        .menu-card:hover::before { transform: scaleY(1); }
+
+        .menu-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+        .menu-header h3 { font-size: 1.8rem; color: var(--ocean); }
+        .price { font-weight: 700; color: var(--aqua); font-size: 1.2rem; }
+        .menu-card p { color: var(--text-light); font-weight: 300; font-size: 1rem; }
+
+        /* Reservations - High Impact */
+        .reservation-section { 
+            background: var(--ocean); 
+            color: var(--white); 
+            text-align: center; 
+            padding: 120px 0;
+            position: relative;
+        }
+        .phone-link { 
+            font-size: clamp(2.5rem, 10vw, 5rem); 
+            color: var(--aqua); 
+            text-decoration: none; 
+            font-family: 'Playfair Display', serif; 
+            display: block; 
+            margin: 40px 0;
+            transition: var(--transition);
+        }
+        .phone-link:hover { color: var(--white); letter-spacing: 2px; }
+
+        /* Footer */
+        footer { padding: 100px 0 60px; text-align: center; border-top: 1px solid #eee; }
+        .footer-logo { font-size: 2.5rem; margin-bottom: 30px; display: block; color: var(--ocean); text-decoration: none; }
+        .social-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; }
+        .social-links a { color: var(--text-light); text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        .social-links a:hover { color: var(--aqua); }
+
+        /* Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(50px); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 850px) {
+            .about-grid { grid-template-columns: 1fr; gap: 50px; }
+            .nav-links { display: none; }
+            .section { padding: 100px 0; }
+            .btn-outline { margin-left: 0; margin-top: 15px; width: 100%; }
+            .btn-ocean { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Basalto</a>
+            <ul class="nav-links">
+                <li><a href="#about">Experiência</a></li>
+                <li><a href="#menu">Ementa</a></li>
+                <li><a href="#reservations">Reservas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content container">
+            <p class="reveal">Fresh seafood. Breathtaking views.</p>
+            <h1 class="reveal">Basalto</h1>
+            <p class="reveal">Above the Atlantic.</p>
+            <div class="cta-group reveal">
+                <a href="tel:+351291111207" class="btn btn-ocean">Reservar Mesa</a>
+                <a href="#menu" class="btn btn-outline">Ver Ementa</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section container">
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <span class="section-subtitle" style="text-align: left;">A Nossa Alma</span>
+                <h2>Onde o oceano encontra a rocha vulcânica.</h2>
+                <p>O Basalto é um destino gastronómico suspenso sobre as águas da Praia da Barreirinha. Um espaço onde a arquitetura minimalista respeita a força do Atlântico.</p>
+                <p>Aqui, o Chef Daniel Ferreira interpreta o mar com audácia, servindo apenas o que de mais fresco as marés nos trazem, num ambiente que respira exclusividade e calma.</p>
+            </div>
+            <div class="about-image reveal">
+                <img src="https://images.unsplash.com/photo-1589136142558-946f12006741?auto=format&fit=crop&q=80&w=800" alt="Vista Basalto Funchal">
+            </div>
+        </div>
+    </section>
+
+    <div id="menu" class="menu-container">
+        <section class="section container">
+            <span class="section-subtitle">Curadoria Gastronómica</span>
+            <h2 class="section-title">Ementa de Assinatura</h2>
+            
+            <div class="menu-grid">
+                <div class="menu-card reveal">
+                    <div class="menu-header"><h3>Bife de Atum</h3><span class="price">22€</span></div>
+                    <p>Atum de salto e vara, selado na perfeição com ervas da serra e batata a murro.</p>
+                </div>
+                <div class="menu-card reveal">
+                    <div class="menu-header"><h3>Tártaro de Atum</h3><span class="price">16€</span></div>
+                    <p>Cortado à mão, com notas cítricas de lima regional e cremoso de abacate.</p>
+                </div>
+                <div class="menu-card reveal">
+                    <div class="menu-header"><h3>Peixe-Espada Preto</h3><span class="price">19€</span></div>
+                    <p>O ícone da Madeira, servido com banana frita crocante e molho de maracujá.</p>
+                </div>
+                <div class="menu-card reveal">
+                    <div class="menu-header"><h3>Ceviche de Pargo</h3><span class="price">17€</span></div>
+                    <p>Peixe branco marinado em leite de tigre, batata doce e rebentos frescos.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="reservations" class="reservation-section">
+        <div class="container">
+            <span class="section-subtitle" style="color: var(--white); opacity: 0.6;">Exclusividade</span>
+            <h2 class="reveal">Garanta o seu lugar ao pôr-do-sol</h2>
+            <a href="tel:+351291111207" class="phone-link reveal">+351 291 111 207</a>
+            <p class="reveal" style="font-style: italic; opacity: 0.8; letter-spacing: 1px;">Largo do Socorro, Funchal — Acesso privado via elevador.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">Basalto</a>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Tripadvisor</a>
+            </div>
+            <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; text-transform: uppercase;">&copy; 2024 Restaurante Basalto. Criado para amantes do mar.</p>
+        </div>
+    </footer>
+
+    <script>
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+        const observer = new IntersectionObserver(revealCallback, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
